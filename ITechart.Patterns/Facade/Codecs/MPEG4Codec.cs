@@ -9,9 +9,9 @@ namespace ITechart.Patterns.Facade.Codecs
 {
     class MPEG4Codec : ICodec
     {
-        public string Convert(VideoFile File)
+        public string Convert(VideoFile file)
         {
-            return $"{File.Filename} converted to MPEG4";
+            return $"{file.FileName} converted to MPEG4";
         }
     }
 }

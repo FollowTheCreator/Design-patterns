@@ -8,6 +8,6 @@ namespace ITechart.Patterns.Facade.Interfaces
 {
     interface ICodec
     {
-        string Convert(VideoFile File);
+        string Convert(VideoFile file);
     }
 }

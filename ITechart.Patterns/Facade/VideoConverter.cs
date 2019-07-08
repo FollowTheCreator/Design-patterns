@@ -9,9 +9,9 @@ namespace ITechart.Patterns.Facade
 {
     class VideoConverter
     {
-        public static string Convert(VideoFile File, ICodec Codec)
+        public static string Convert(VideoFile file, ICodec codec)
         {
-            return Codec.Convert(File);
+            return codec.Convert(file);
         }
     }
 }

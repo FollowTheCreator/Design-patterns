@@ -9,9 +9,9 @@ namespace ITechart.Patterns.Facade.Codecs
 {
     class OGGCodec : ICodec
     {
-        public string Convert(VideoFile File)
+        public string Convert(VideoFile file)
         {
-            return $"{File.Filename} converted to OGG";
+            return $"{file.FileName} converted to OGG";
         }
     }
 }

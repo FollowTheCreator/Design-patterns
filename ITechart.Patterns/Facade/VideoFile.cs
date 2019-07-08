@@ -8,11 +8,11 @@ namespace ITechart.Patterns.Facade
 {
     class VideoFile
     {
-        public string Filename { get; private set; }
+        public string FileName { get; private set; }
 
-        public VideoFile(string Filename)
+        public VideoFile(string fileName)
         {
-            this.Filename = Filename;
+            this.FileName = fileName;
         }
     }
 }
