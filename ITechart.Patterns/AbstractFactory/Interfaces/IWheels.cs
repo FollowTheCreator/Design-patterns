@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ITechart.Patterns.AbstractFactory
+namespace ITechart.Patterns.AbstractFactory.Interfaces
 {
-    class AbstractFactory
+    interface IWheels
     {
-
+        string DescribeWheels();
     }
 }

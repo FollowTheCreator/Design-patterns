@@ -43,13 +43,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractFactory\AbstractFactory.cs" />
     <Compile Include="AbstractFactory\AbstractFactoryUsage.cs" />
+    <Compile Include="AbstractFactory\Implementations\Car.cs" />
+    <Compile Include="AbstractFactory\Implementations\EconomicCarFactory.cs" />
+    <Compile Include="AbstractFactory\Implementations\EconomicEngine.cs" />
+    <Compile Include="AbstractFactory\Implementations\EconomicSuspension.cs" />
+    <Compile Include="AbstractFactory\Implementations\EconomicWheels.cs" />
+    <Compile Include="AbstractFactory\Implementations\Engine.cs" />
+    <Compile Include="AbstractFactory\Implementations\ExtraCarFactory.cs" />
+    <Compile Include="AbstractFactory\Implementations\ExtraEngine.cs" />
+    <Compile Include="AbstractFactory\Implementations\ExtraSuspension.cs" />
+    <Compile Include="AbstractFactory\Implementations\ExtraWheels.cs" />
+    <Compile Include="AbstractFactory\Implementations\StandartCarFactory.cs" />
+    <Compile Include="AbstractFactory\Implementations\StandartEngine.cs" />
+    <Compile Include="AbstractFactory\Implementations\StandartSuspension.cs" />
+    <Compile Include="AbstractFactory\Implementations\StandartWheels.cs" />
+    <Compile Include="AbstractFactory\Implementations\Suspension.cs" />
+    <Compile Include="AbstractFactory\Implementations\Wheels.cs" />
+    <Compile Include="AbstractFactory\Interfaces\ICarFactory.cs" />
+    <Compile Include="AbstractFactory\Interfaces\IEngine.cs" />
+    <Compile Include="AbstractFactory\Interfaces\ISuspension.cs" />
+    <Compile Include="AbstractFactory\Interfaces\IWheels.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
