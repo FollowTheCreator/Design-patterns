@@ -17,7 +17,6 @@ namespace ITechart.Patterns.AbstractFactory
             Console.WriteLine($"\nStandart car description: {MyCar.DescribeCar()}");
             MyCar = new Car(new ExtraCarFactory());
             Console.WriteLine($"\nExtra car description: {MyCar.DescribeCar()}");
-            Console.ReadKey();
         }
     }
 }

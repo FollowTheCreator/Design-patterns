@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,12 +65,26 @@
     <Compile Include="AbstractFactory\Interfaces\IEngine.cs" />
     <Compile Include="AbstractFactory\Interfaces\ISuspension.cs" />
     <Compile Include="AbstractFactory\Interfaces\IWheels.cs" />
+    <Compile Include="Adapter\AdapterUsage.cs" />
+    <Compile Include="Adapter\BooksAnalyzer.cs" />
+    <Compile Include="Adapter\BooksLibrary.cs" />
+    <Compile Include="Adapter\Implementations\AdapterXMLToJson.cs" />
+    <Compile Include="Adapter\Implementations\Json.cs" />
+    <Compile Include="Adapter\Implementations\XML.cs" />
+    <Compile Include="Adapter\Interfaces\IJson.cs" />
+    <Compile Include="Adapter\Interfaces\IXML.cs" />
+    <Compile Include="Adapter\Models\Book.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Adapter\Data\Books.json" />
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Adapter\Data\Books.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
