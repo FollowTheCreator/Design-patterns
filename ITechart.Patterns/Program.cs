@@ -17,6 +17,9 @@ namespace ITechart.Patterns
             ExampleAbstractFactoryUsage.UseAbstractFactory();
             Console.WriteLine();
 
+            Console.WriteLine("--Adapter");
+            AdapterUsage.UseAdapter();
+
             Console.ReadKey();
         }
     }
