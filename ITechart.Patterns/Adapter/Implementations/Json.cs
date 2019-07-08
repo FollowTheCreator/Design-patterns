@@ -15,10 +15,5 @@ namespace ITechart.Patterns.Adapter.Implementations
         {
             this.Path = Path;
         }
-
-        public string GetJsonPath()
-        {
-            return Path;
-        }
     }
 }

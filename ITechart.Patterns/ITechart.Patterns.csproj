@@ -68,11 +68,11 @@
     <Compile Include="Adapter\AdapterUsage.cs" />
     <Compile Include="Adapter\BooksAnalyzer.cs" />
     <Compile Include="Adapter\BooksLibrary.cs" />
-    <Compile Include="Adapter\Implementations\AdapterXMLToJson.cs" />
+    <Compile Include="Adapter\Implementations\AdapterXmlToJson.cs" />
     <Compile Include="Adapter\Implementations\Json.cs" />
-    <Compile Include="Adapter\Implementations\XML.cs" />
+    <Compile Include="Adapter\Implementations\Xml.cs" />
     <Compile Include="Adapter\Interfaces\IJson.cs" />
-    <Compile Include="Adapter\Interfaces\IXML.cs" />
+    <Compile Include="Adapter\Interfaces\IXml.cs" />
     <Compile Include="Adapter\Models\Book.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

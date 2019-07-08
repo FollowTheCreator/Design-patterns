@@ -10,7 +10,7 @@ namespace ITechart.Patterns.Adapter
 {
     class BooksLibrary
     {
-        public static string GetBooksXML(IXML XML)
+        public static string GetBooksXML(IXml xml)
         {
             XDocument xDocument = new XDocument(
                 new XElement(
@@ -35,8 +35,8 @@ namespace ITechart.Patterns.Adapter
                     )
                 )
             );
-            xDocument.Save(XML.GetXMLPath());
-            return XML.GetXMLPath();
+            xDocument.Save(xml.Path);
+            return xml.Path;
         }
     }
 }

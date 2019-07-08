@@ -12,13 +12,13 @@ namespace ITechart.Patterns.Adapter
 {
     class BooksAnalyzer
     {
-        public static Book GetOldestBook(IJson Json)
+        public static Book GetOldestBook(IJson json)
         {
-            DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(List<Book>));
-            using (FileStream fs = new FileStream(Json.GetJsonPath(), FileMode.OpenOrCreate))
+            var jsonSerializer = new DataContractJsonSerializer(typeof(List<Book>));
+            using (FileStream fs = new FileStream(json.Path, FileMode.OpenOrCreate))
             {
-                List<Book> Books = (List<Book>)jsonSerializer.ReadObject(fs);
-                return (Books.Where(book1 => book1.DateOfCreation == Books.Min(book => book.DateOfCreation))).FirstOrDefault();
+                var books = (List<Book>)jsonSerializer.ReadObject(fs);
+                return (books.Where(book1 => book1.DateOfCreation == books.Min(book => book.DateOfCreation))).FirstOrDefault();
             }
         }
     }

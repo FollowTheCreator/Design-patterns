@@ -9,7 +9,5 @@ namespace ITechart.Patterns.Adapter.Interfaces
     interface IJson
     {
         string Path { get; set; }
-
-        string GetJsonPath();
     }
 }

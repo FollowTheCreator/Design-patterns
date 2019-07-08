@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ITechart.Patterns.Adapter.Interfaces;
 using ITechart.Patterns.Adapter.Models;
 using ITechart.Patterns.Adapter.Implementations;
+using System.IO;
 
 namespace ITechart.Patterns.Adapter
 {
@@ -13,14 +14,10 @@ namespace ITechart.Patterns.Adapter
     {
         public static void UseAdapter()
         {
-            Console.WriteLine(".json input");
-            Book OldestBook = BooksAnalyzer.GetOldestBook(new Json(@"..\..\Adapter\Data\Books.json"));
-            Console.WriteLine($"Author: {OldestBook.Author}, Date of creation: {OldestBook.DateOfCreation}, Name: {OldestBook.Name}");
-
-            Console.WriteLine("\n.xml input");
-            IJson AdaptedXMLList = new AdapterXMLToJson(new XML(@"..\..\Adapter\Data\Books.xml"));
-            OldestBook = BooksAnalyzer.GetOldestBook(AdaptedXMLList);
-            Console.WriteLine($"Author: {OldestBook.Author}, Date of creation: {OldestBook.DateOfCreation}, Name: {OldestBook.Name}");
+            IJson adaptedXmlList = new AdapterXmlToJson(new Xml(@"..\..\Adapter\Data\Books.xml"));
+            Book oldestBook = BooksAnalyzer.GetOldestBook(adaptedXmlList);
+            Console.WriteLine($"Author: {oldestBook.Author}, Date of creation: {oldestBook.DateOfCreation}, Name: {oldestBook.Name}");
+            File.Delete(@"..\..\Adapter\Data\Books.json");
         }
     }
 }

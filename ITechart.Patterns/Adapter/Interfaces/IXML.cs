@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ITechart.Patterns.Adapter.Interfaces
 {
-    interface IXML
+    interface IXml
     {
         string Path { get; set; }
-
-        string GetXMLPath();
     }
 }

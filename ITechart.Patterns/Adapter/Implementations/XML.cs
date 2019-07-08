@@ -7,18 +7,13 @@ using ITechart.Patterns.Adapter.Interfaces;
 
 namespace ITechart.Patterns.Adapter.Implementations
 {
-    class XML : IXML
+    class Xml : IXml
     {
         public string Path { get; set; }
 
-        public XML(string Path)
+        public Xml(string path)
         {
-            this.Path = Path;
-        }
-
-        public string GetXMLPath()
-        {
-            return Path;
+            this.Path = path;
         }
     }
 }
