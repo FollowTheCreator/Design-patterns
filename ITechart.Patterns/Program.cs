@@ -7,6 +7,7 @@ using ITechart.Patterns.AbstractFactory;
 using ITechart.Patterns.Singleton.DbContexts;
 using ITechart.Patterns.Singleton.Models;
 using ITechart.Patterns.Singleton;
+using ITechart.Patterns.Facade;
 
 namespace ITechart.Patterns
 {
@@ -14,7 +15,11 @@ namespace ITechart.Patterns
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("--Singleton");
             SingletonUsage.UseSingleton();
+
+            Console.WriteLine("\n--Facade");
+            FacadeUsage.UseFacade();
             Console.ReadKey();
         }
     }
