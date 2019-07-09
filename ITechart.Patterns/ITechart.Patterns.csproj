@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractFactory\AbstractFactoryUsage.cs" />
     <Compile Include="AbstractFactory\Implementations\Car.cs" />
     <Compile Include="AbstractFactory\Implementations\EconomicCarFactory.cs" />
     <Compile Include="AbstractFactory\Implementations\EconomicEngine.cs" />
@@ -67,6 +66,13 @@
     <Compile Include="AbstractFactory\Interfaces\IEngine.cs" />
     <Compile Include="AbstractFactory\Interfaces\ISuspension.cs" />
     <Compile Include="AbstractFactory\Interfaces\IWheels.cs" />
+    <Compile Include="Facade\FacadeUsage.cs" />
+    <Compile Include="Facade\Codecs\MPEG4Codec.cs" />
+    <Compile Include="Facade\Codecs\OGGCodec.cs" />
+    <Compile Include="Facade\Interfaces\ICodec.cs" />
+    <Compile Include="Facade\SimpleConverter.cs" />
+    <Compile Include="Facade\VideoConverter.cs" />
+    <Compile Include="Facade\VideoFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxy\ExternalResource.cs" />
