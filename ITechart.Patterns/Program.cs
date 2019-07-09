@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ITechart.Patterns.AbstractFactory;
 using ITechart.Patterns.Adapter;
+using ITechart.Patterns.Facade;
 
 namespace ITechart.Patterns
 {
@@ -15,11 +16,11 @@ namespace ITechart.Patterns
             Console.WriteLine("--Abstract factory");
             AbstractFactoryUsage ExampleAbstractFactoryUsage = new AbstractFactoryUsage();
             ExampleAbstractFactoryUsage.UseAbstractFactory();
-            Console.WriteLine();
 
-            Console.WriteLine("--Adapter");
+            Console.WriteLine("\n--Adapter");
             AdapterUsage.UseAdapter();
-
+            Console.WriteLine("\n--Facade");
+            FacadeUsage.UseFacade();
             Console.ReadKey();
         }
     }
