@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ITechart.Patterns.AbstractFactory;
+using ITechart.Patterns.Proxy;
 
 namespace ITechart.Patterns
 {
@@ -11,8 +12,9 @@ namespace ITechart.Patterns
     {
         static void Main(string[] args)
         {
-            AbstractFactoryUsage ExampleAbstractFactoryUsage = new AbstractFactoryUsage();
-            ExampleAbstractFactoryUsage.UseAbstractFactory();
+            Console.WriteLine("--Proxy");
+            ProxyUsage.UseProxy();
+            Console.ReadKey();
         }
     }
 }
