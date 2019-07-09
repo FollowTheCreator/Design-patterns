@@ -11,9 +11,11 @@ namespace ITechart.Patterns.Singleton
 {
     class AccessToDB : IDisposable
     {
-        private static PersonContext db;
+        private static PersonContext _db;
 
-        private static AccessToDB Access;
+        private static AccessToDB _access;
+
+        private bool disposed = false;
 
         public List<Person> People { get; private set; }
 
@@ -24,29 +26,47 @@ namespace ITechart.Patterns.Singleton
 
         public static AccessToDB GetAccess()
         {
-            if(Access == null)
+            if(_access == null)
             {
-                db = new PersonContext();
-                var dbpeople = db.People;
-                var people = new List<Person>();
-                foreach(Person person in dbpeople)
-                {
-                    people.Add(new Person() { Id = person.Id, Name = person.Name, Age = person.Age });
-                }
-                Access = new AccessToDB(people);
+                _db = new PersonContext();
+
+                var people = _db.People
+                    .ToList()
+                    .Select(person => new Person()
+                    {
+                        Id = person.Id,
+                        Name = person.Name,
+                        Age = person.Age
+                    })
+                    .ToList();
+
+                _access = new AccessToDB(people);
             }
             else
             {
                 SingletonSignal.Signal();
             }
-            return Access;
+            return _access;
         }
 
         public void Dispose()
         {
-            db.Dispose();
-            Access = null;
+            Dispose(true);
+            GC.SuppressFinalize(this);
             DisposeSignal.Signal();
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    _db.Dispose();
+                }
+                _access = null;
+                disposed = true;
+            }
         }
     }
 }

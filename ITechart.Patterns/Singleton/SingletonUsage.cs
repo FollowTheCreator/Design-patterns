@@ -18,7 +18,7 @@ namespace ITechart.Patterns.Singleton
                 PeopleOuput(access);
 
                 Console.WriteLine("\nTrying to another access while singleton instance exists:");
-                AccessToDB anotherAccess = AccessToDB.GetAccess();
+                using (AccessToDB anotherAccess = AccessToDB.GetAccess()) { }
             }
 
             Console.WriteLine("\nTrying to another access after the instance dispose:");
@@ -30,7 +30,7 @@ namespace ITechart.Patterns.Singleton
 
         private static void PeopleOuput(AccessToDB access)
         {
-            foreach (Person person in access.People)
+            foreach (var person in access.People)
             {
                 Console.WriteLine($"Name: {person?.Name}, Age: {person?.Age}");
             }

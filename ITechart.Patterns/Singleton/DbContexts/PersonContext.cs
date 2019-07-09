@@ -11,6 +11,7 @@ namespace ITechart.Patterns.Singleton.DbContexts
     class PersonContext : DbContext
     {
         public PersonContext() : base("Person") { }
+
         public DbSet<Person> People { get; set; }
     }
 }
