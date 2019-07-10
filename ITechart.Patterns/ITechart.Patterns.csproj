@@ -122,13 +122,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Singleton\Database\dbo.People.sql" />
-    <Content Include="Singleton\Database\SingletonDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Singleton\Database\SingletonDB_log.ldf">
-      <DependentUpon>SingletonDB.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -13,24 +13,35 @@ namespace ITechart.Patterns.Singleton
         public static void UseSingleton()
         {
             Console.WriteLine("First access:");
-            using (AccessToDB access = AccessToDB.GetAccess())
-            {
-                PeopleOuput(access);
+            var context = GetContext();
+            var people = context.People
+                        .ToList()
+                        .Select(person => new Person()
+                        {
+                            Id = person.Id,
+                            Name = person.Name,
+                            Age = person.Age
+                        })
+                        .ToList();
+            PeopleOuput(people);
 
-                Console.WriteLine("\nTrying to another access while singleton instance exists:");
-                using (AccessToDB anotherAccess = AccessToDB.GetAccess()) { }
-            }
-
-            Console.WriteLine("\nTrying to another access after the instance dispose:");
-            using (AccessToDB access = AccessToDB.GetAccess())
-            {
-                PeopleOuput(access);
-            }
+            Console.WriteLine("\nTrying to another access while singleton instance exists:");
+            var context2 = GetContext();
+            var agesSum = context.People.Sum(item => item.Age);
+            Console.WriteLine($"Sum of ages: {agesSum}");
         }
 
-        private static void PeopleOuput(AccessToDB access)
+        private static PersonContext GetContext()
         {
-            foreach (var person in access.People)
+            return AccessToDB.GetContext(
+                () => Console.WriteLine("new instance was created"),
+                () => Console.WriteLine("using existing instance")
+            );
+        }
+
+        private static void PeopleOuput(IEnumerable<Person> people)
+        {
+            foreach (var person in people)
             {
                 Console.WriteLine($"Name: {person?.Name}, Age: {person?.Age}");
             }
