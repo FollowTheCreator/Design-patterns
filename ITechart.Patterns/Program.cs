@@ -13,12 +13,18 @@ namespace ITechart.Patterns
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--Proxy");
-            ProxyUsage.UseProxy();
+            RunSample("Proxy", ProxyUsage.UseProxy);
 
-            Console.WriteLine("\n--Facade");
-            FacadeUsage.UseFacade();
+            RunSample("Facade", FacadeUsage.UseFacade);
+
             Console.ReadKey();
+        }
+
+        private static void RunSample(string name, Action action)
+        {
+            Console.WriteLine("--{0}", name);
+            action();
+            Console.WriteLine();
         }
     }
 }

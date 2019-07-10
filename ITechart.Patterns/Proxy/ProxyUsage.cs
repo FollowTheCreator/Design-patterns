@@ -13,15 +13,22 @@ namespace ITechart.Patterns.Proxy
     {
         public static void UseProxy()
         {
-            IYesterdayRate rates = new YesterdayRateProxy();
-            ExchangeRate firstRate = rates.GetRate(1);
-            Console.WriteLine($"Rate: {firstRate?.Rate}, Source: {firstRate?.Source}");
+            IYesterdayRate rates = new YesterdayRateProxy(new YesterdayRate());
+            WriteRate(rates.GetRate(1));
 
-            ExchangeRate secondRate = rates.GetRate(2);
-            Console.WriteLine($"Rate: {secondRate?.Rate}, Source: {secondRate?.Source}");
+            WriteRate(rates.GetRate(2));
 
-            ExchangeRate thirdRate = rates.GetRate(1);
-            Console.WriteLine($"Rate: {thirdRate?.Rate}, Source: {thirdRate?.Source}");
+            WriteRate(rates.GetRate(15));
+
+            WriteRate(rates.GetRate(1));
+        }
+
+        private static void WriteRate(ExchangeRate rate)
+        {
+            if (rate != null)
+            {
+                Console.WriteLine($"Rate: {rate.Rate}, Source: {rate.Source}");
+            }
         }
     }
 }
