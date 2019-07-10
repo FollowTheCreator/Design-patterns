@@ -8,7 +8,7 @@ using ITechart.Patterns.Proxy.Models;
 
 namespace ITechart.Patterns.Proxy.Implementations
 {
-    class YesterdayRate 
+    class YesterdayRate : IYesterdayRate
     {
         public ExchangeRate GetRate(int id)
         {
