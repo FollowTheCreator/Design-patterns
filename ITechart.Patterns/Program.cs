@@ -15,12 +15,18 @@ namespace ITechart.Patterns
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--Singleton");
-            SingletonUsage.UseSingleton();
+            RunSample("Singleton", SingletonUsage.UseSingleton);
 
-            Console.WriteLine("\n--Facade");
-            FacadeUsage.UseFacade();
+            RunSample("Facade", FacadeUsage.UseFacade);
+
             Console.ReadKey();
+        }
+
+        private static void RunSample(string name, Action action)
+        {
+            Console.WriteLine("--{0}", name);
+            action();
+            Console.WriteLine();
         }
     }
 }
