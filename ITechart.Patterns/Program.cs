@@ -13,15 +13,22 @@ namespace ITechart.Patterns
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--Abstract factory");
-            AbstractFactoryUsage ExampleAbstractFactoryUsage = new AbstractFactoryUsage();
-            ExampleAbstractFactoryUsage.UseAbstractFactory();
+            RunSample("Abstract factory", () => {
+                AbstractFactoryUsage exampleAbstractFactoryUsage = new AbstractFactoryUsage();
+                exampleAbstractFactoryUsage.UseAbstractFactory();
+            });
 
-            Console.WriteLine("\n--Adapter");
-            AdapterUsage.UseAdapter();
-            Console.WriteLine("\n--Facade");
-            FacadeUsage.UseFacade();
+            RunSample("Adapter", AdapterUsage.UseAdapter);
+
+            RunSample("Facade", FacadeUsage.UseFacade);
+
             Console.ReadKey();
+        }
+        private static void RunSample(string name, Action action)
+        {
+            Console.WriteLine("--{0}", name);
+            action();
+            Console.WriteLine();
         }
     }
 }
