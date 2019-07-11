@@ -7,6 +7,9 @@ using ITechart.Patterns.AbstractFactory;
 using ITechart.Patterns.Singleton.DbContexts;
 using ITechart.Patterns.Singleton.Models;
 using ITechart.Patterns.Singleton;
+using System.Xml;
+using ITechart.Patterns.Adapter;
+using ITechart.Patterns.Proxy;
 using ITechart.Patterns.Facade;
 
 namespace ITechart.Patterns
@@ -15,9 +18,20 @@ namespace ITechart.Patterns
     {
         static void Main(string[] args)
         {
+            RunSample("Abstract factory", () => {
+                AbstractFactoryUsage exampleAbstractFactoryUsage = new AbstractFactoryUsage();
+                exampleAbstractFactoryUsage.UseAbstractFactory();
+            });
+
+            RunSample("Adapter", AdapterUsage.UseAdapter);
+            
+            RunSample("Facade", FacadeUsage.UseFacade);
+
+            RunSample("Proxy", ProxyUsage.UseProxy);
+
             RunSample("Singleton", SingletonUsage.UseSingleton);
 
-            RunSample("Facade", FacadeUsage.UseFacade);
+
 
             Console.ReadKey();
         }

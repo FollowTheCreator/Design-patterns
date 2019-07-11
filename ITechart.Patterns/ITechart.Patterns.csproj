@@ -54,6 +54,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -88,7 +91,16 @@
     <Compile Include="AbstractFactory\Interfaces\IEngine.cs" />
     <Compile Include="AbstractFactory\Interfaces\ISuspension.cs" />
     <Compile Include="AbstractFactory\Interfaces\IWheels.cs" />
-    <Compile Include="Singleton\AccessToDB.cs" />
+    <Compile Include="Adapter\AdapterUsage.cs" />
+    <Compile Include="Adapter\BooksAnalyzer.cs" />
+    <Compile Include="Adapter\BooksLibrary.cs" />
+    <Compile Include="Adapter\Implementations\AdapterXmlToJson.cs" />
+    <Compile Include="Adapter\Implementations\Json.cs" />
+    <Compile Include="Adapter\Implementations\Xml.cs" />
+    <Compile Include="Adapter\Interfaces\IJson.cs" />
+    <Compile Include="Adapter\Interfaces\IXml.cs" />
+    <Compile Include="Adapter\Models\Book.cs" />
+	<Compile Include="Singleton\AccessToDB.cs" />
     <Compile Include="Facade\FacadeUsage.cs" />
     <Compile Include="Facade\Codecs\MPEG4Codec.cs" />
     <Compile Include="Facade\Codecs\OGGCodec.cs" />
@@ -98,6 +110,12 @@
     <Compile Include="Facade\VideoFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxy\ExternalResource.cs" />
+    <Compile Include="Proxy\Implementations\YesterdayRate.cs" />
+    <Compile Include="Proxy\Implementations\YesterdayRateProxy.cs" />
+    <Compile Include="Proxy\Interfaces\IYesterdayRate.cs" />
+    <Compile Include="Proxy\Models\ExchangeRate.cs" />
+    <Compile Include="Proxy\ProxyUsage.cs" />
     <Compile Include="Singleton\DbContexts\PersonContext.cs" />
     <Compile Include="Singleton\Models\Person.cs" />
     <Compile Include="Singleton\SingletonUsage.cs" />
