@@ -15,19 +15,19 @@ namespace ITechart.Patterns.Singleton
             Console.WriteLine("First access:");
             var context = GetContext();
             var people = context.People
-                        .ToList()
-                        .Select(person => new Person()
-                        {
-                            Id = person.Id,
-                            Name = person.Name,
-                            Age = person.Age
-                        })
-                        .ToList();
+                         .ToList()
+                         .Select(person => new Person()
+                         {
+                             Id = person.Id,
+                             Name = person.Name,
+                             Age = person.Age
+                         })
+                         .ToList();
             PeopleOuput(people);
 
             Console.WriteLine("\nTrying to another access while singleton instance exists:");
             var context2 = GetContext();
-            var agesSum = context.People.Sum(item => item.Age);
+            var agesSum = context2.People.Sum(item => item.Age);
             Console.WriteLine($"Sum of ages: {agesSum}");
         }
 

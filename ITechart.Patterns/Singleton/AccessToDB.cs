@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using ITechart.Patterns.Singleton.DbContexts;
 using ITechart.Patterns.Singleton.Models;
-using ITechart.Patterns.Singleton.Signals;
 
 namespace ITechart.Patterns.Singleton
 {

@@ -99,9 +99,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton\DbContexts\PersonContext.cs" />
-    <Compile Include="Singleton\Signals\DisposeSignal.cs" />
     <Compile Include="Singleton\Models\Person.cs" />
-    <Compile Include="Singleton\Signals\SingletonSignal.cs" />
     <Compile Include="Singleton\SingletonUsage.cs" />
   </ItemGroup>
   <ItemGroup>
