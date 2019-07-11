@@ -17,7 +17,7 @@ namespace ITechart.Patterns.Adapter
         {
             var jsonSerializer = new DataContractJsonSerializer(typeof(List<Book>));
             var books = JsonConvert.DeserializeObject<List<Book>>(json.Value);
-            return (books.Where(book1 => book1.DateOfCreation == books.Min(book => book.DateOfCreation))).FirstOrDefault();
+            return books.FirstOrDefault(book1 => book1.DateOfCreation == books.Min(book => book.DateOfCreation));
         }
     }
 }

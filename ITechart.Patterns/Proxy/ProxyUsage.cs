@@ -14,6 +14,7 @@ namespace ITechart.Patterns.Proxy
         public static void UseProxy()
         {
             IYesterdayRate rates = new YesterdayRateProxy(new YesterdayRate());
+
             WriteRate(rates.GetRate(1));
 
             WriteRate(rates.GetRate(2));

@@ -13,10 +13,12 @@ namespace ITechart.Patterns.AbstractFactory.Implementations
         {
             return new StandartEngine();
         }
+
         public IWheels CreateWheels()
         {
             return new StandartWheels();
         }
+
         public ISuspension CreateSuspension()
         {
             return new StandartSuspension();

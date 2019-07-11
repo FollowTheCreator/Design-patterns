@@ -12,7 +12,7 @@ namespace ITechart.Patterns.Facade
 
         public VideoFile(string fileName)
         {
-            this.FileName = fileName;
+            FileName = fileName;
         }
     }
 }

@@ -31,8 +31,6 @@ namespace ITechart.Patterns
 
             RunSample("Singleton", SingletonUsage.UseSingleton);
 
-
-
             Console.ReadKey();
         }
 
