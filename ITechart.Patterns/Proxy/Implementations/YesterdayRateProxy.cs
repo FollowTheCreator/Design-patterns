@@ -10,25 +10,25 @@ namespace ITechart.Patterns.Proxy.Implementations
 {
     class YesterdayRateProxy : IYesterdayRate
     {
-        private readonly List<ExchangeRate> rates;
+        private readonly List<ExchangeRate> _rates;
 
-        private readonly IYesterdayRate yesterdayRate;
+        private readonly IYesterdayRate _yesterdayRate;
 
         public YesterdayRateProxy(IYesterdayRate yesterdayRate)
         {
-            this.yesterdayRate = yesterdayRate;
-            rates = new List<ExchangeRate>();
+            _yesterdayRate = yesterdayRate;
+            _rates = new List<ExchangeRate>();
         }
 
         public ExchangeRate GetRate(int id)
         {
-            ExchangeRate rate = rates.FirstOrDefault(item => item.Id == id);
+            ExchangeRate rate = _rates.FirstOrDefault(item => item.Id == id);
             if (rate == null)
             {
-                rate = yesterdayRate.GetRate(id);
+                rate = _yesterdayRate.GetRate(id);
                 if(rate != null)
                 {
-                    rates.Add(rate);
+                    _rates.Add(rate);
                     rate.Source = "External";
                 }
             }
