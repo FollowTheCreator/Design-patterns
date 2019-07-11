@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using ITechart.Patterns.AbstractFactory;
 using ITechart.Patterns.Adapter;
+using ITechart.Patterns.Proxy;
 using ITechart.Patterns.Facade;
 
 namespace ITechart.Patterns
@@ -22,6 +23,8 @@ namespace ITechart.Patterns
             RunSample("Adapter", AdapterUsage.UseAdapter);
             
             RunSample("Facade", FacadeUsage.UseFacade);
+
+            RunSample("Proxy", ProxyUsage.UseProxy);
 
             Console.ReadKey();
         }
