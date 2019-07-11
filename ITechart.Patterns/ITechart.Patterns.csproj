@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,8 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractFactory\AbstractFactory.cs" />
-    <Compile Include="AbstractFactory\AbstractFactoryUsage.cs" />
+    <Compile Include="AbstractFactory\Implementations\Car.cs" />
+    <Compile Include="AbstractFactory\Implementations\EconomicCarFactory.cs" />
+    <Compile Include="AbstractFactory\Implementations\EconomicEngine.cs" />
+    <Compile Include="AbstractFactory\Implementations\EconomicSuspension.cs" />
+    <Compile Include="AbstractFactory\Implementations\EconomicWheels.cs" />
+    <Compile Include="AbstractFactory\Implementations\Engine.cs" />
+    <Compile Include="AbstractFactory\Implementations\ExtraCarFactory.cs" />
+    <Compile Include="AbstractFactory\Implementations\ExtraEngine.cs" />
+    <Compile Include="AbstractFactory\Implementations\ExtraSuspension.cs" />
+    <Compile Include="AbstractFactory\Implementations\ExtraWheels.cs" />
+    <Compile Include="AbstractFactory\Implementations\StandartCarFactory.cs" />
+    <Compile Include="AbstractFactory\Implementations\StandartEngine.cs" />
+    <Compile Include="AbstractFactory\Implementations\StandartSuspension.cs" />
+    <Compile Include="AbstractFactory\Implementations\StandartWheels.cs" />
+    <Compile Include="AbstractFactory\Implementations\Suspension.cs" />
+    <Compile Include="AbstractFactory\Implementations\Wheels.cs" />
+    <Compile Include="AbstractFactory\Interfaces\ICarFactory.cs" />
+    <Compile Include="AbstractFactory\Interfaces\IEngine.cs" />
+    <Compile Include="AbstractFactory\Interfaces\ISuspension.cs" />
+    <Compile Include="AbstractFactory\Interfaces\IWheels.cs" />
     <Compile Include="Facade\FacadeUsage.cs" />
     <Compile Include="Facade\Codecs\MPEG4Codec.cs" />
     <Compile Include="Facade\Codecs\OGGCodec.cs" />
@@ -54,9 +75,16 @@
     <Compile Include="Facade\VideoFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxy\ExternalResource.cs" />
+    <Compile Include="Proxy\Implementations\YesterdayRate.cs" />
+    <Compile Include="Proxy\Implementations\YesterdayRateProxy.cs" />
+    <Compile Include="Proxy\Interfaces\IYesterdayRate.cs" />
+    <Compile Include="Proxy\Models\ExchangeRate.cs" />
+    <Compile Include="Proxy\ProxyUsage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
