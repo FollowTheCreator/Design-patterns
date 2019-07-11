@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,11 @@ namespace ITechart.Patterns.Adapter.Implementations
 {
     class Json : IJson
     {
-        public string Path { get; set; }
+        public string Value { get; set; }
 
-        public Json(string Path)
+        public Json(string value)
         {
-            this.Path = Path;
+            this.Value = value;
         }
     }
 }

@@ -10,33 +10,26 @@ namespace ITechart.Patterns.Adapter
 {
     class BooksLibrary
     {
-        public static string GetBooksXML(IXml xml)
+        public static string GetBooksXML()
         {
-            XDocument xDocument = new XDocument(
-                new XElement(
-                    "Books",
-                    new XElement(
-                        "Book",
-                        new XElement("Author", "Fyodor Dostoevsky"),
-                        new XElement("DateOfCreation", "1866"),
-                        new XElement("Name", "Crime and Punishment")
-                    ),
-                    new XElement(
-                        "Book",
-                        new XElement("Author", "Lev Tolstoy"),
-                        new XElement("DateOfCreation", "1869"),
-                        new XElement("Name", "War and Peace")
-                    ),
-                    new XElement(
-                        "Book",
-                        new XElement("Author", "Nikolai Gogol"),
-                        new XElement("DateOfCreation", "1842"),
-                        new XElement("Name", "Dead Souls")
-                    )
-                )
-            );
-            xDocument.Save(xml.Path);
-            return xml.Path;
+            return "<?xml version=\"1.0\" encoding=\"utf - 8\"?>" +
+                   "<Books>" +
+                       "<Book>" +
+                           "<Author>Fyodor Dostoevsky</Author>" +
+                           "<DateOfCreation>1866</DateOfCreation>" +
+                           "<Name>Crime and Punishment</Name>" +
+                       "</Book>" +
+                       "<Book>" +
+                           "<Author>Lev Tolstoy</Author>" +
+                           "<DateOfCreation>1869</DateOfCreation>" +
+                           "<Name>War and Peace</Name> " +
+                       "</Book>" +
+                       "<Book>" +
+                           "<Author>Nikolai Gogol</Author>" +
+                           "<DateOfCreation>1842</DateOfCreation>" +
+                           "<Name>Dead Souls</Name>" +
+                       "</Book>" +
+                   "</Books>";
         }
     }
 }

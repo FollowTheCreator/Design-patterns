@@ -7,6 +7,7 @@ using ITechart.Patterns.Adapter.Models;
 using ITechart.Patterns.Adapter.Interfaces;
 using System.IO;
 using System.Runtime.Serialization.Json;
+using Newtonsoft.Json;
 
 namespace ITechart.Patterns.Adapter
 {
@@ -15,11 +16,8 @@ namespace ITechart.Patterns.Adapter
         public static Book GetOldestBook(IJson json)
         {
             var jsonSerializer = new DataContractJsonSerializer(typeof(List<Book>));
-            using (FileStream fs = new FileStream(json.Path, FileMode.OpenOrCreate))
-            {
-                var books = (List<Book>)jsonSerializer.ReadObject(fs);
-                return (books.Where(book1 => book1.DateOfCreation == books.Min(book => book.DateOfCreation))).FirstOrDefault();
-            }
+            var books = JsonConvert.DeserializeObject<List<Book>>(json.Value);
+            return (books.Where(book1 => book1.DateOfCreation == books.Min(book => book.DateOfCreation))).FirstOrDefault();
         }
     }
 }

@@ -8,43 +8,47 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using ITechart.Patterns.Adapter.Models;
 using ITechart.Patterns.Adapter.Interfaces;
+using System.Xml;
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace ITechart.Patterns.Adapter.Implementations
 {
     class AdapterXmlToJson : IJson
     {
-        private string path;
-        public string Path {
+        private string _value;
+
+        public string Value
+        {
             get
             {
-                XDocument xDocument = XDocument.Load(XmlPath);
-                var books = (from book in xDocument.Element("Books").Elements("Book")
-                             select new Book
-                             {
-                                 Author = book.Element("Author").Value,
-                                 DateOfCreation = Int32.Parse(book.Element("DateOfCreation").Value),
-                                 Name = book.Element("Name").Value
-                             }).ToList();
-
-                DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(List<Book>));
-                path = @"..\..\Adapter\Data\Books.json";
-                using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
-                {
-                    jsonSerializer.WriteObject(fs, books);
-                }
-                return path;
+                return Adapt(_value);
             }
             set
             {
-                path = value;
+                _value = value;
             }
         }
 
-        public string XmlPath { get; set; }
-
         public AdapterXmlToJson(Xml xml)
         {
-            XmlPath = xml.Path;
+            _value = xml.Value;
+        }
+
+        private static string Adapt(string stream)
+        {
+            var xmlDoc = new XmlDocument();
+
+            xmlDoc.LoadXml(stream);
+            var books = (from XmlNode book in xmlDoc.GetElementsByTagName("Book")
+                         select new Book
+                         {
+                             Author = book.SelectSingleNode("Author").InnerText,
+                             DateOfCreation = int.Parse(book.SelectSingleNode("DateOfCreation").InnerText),
+                             Name = book.SelectSingleNode("Name").InnerText
+                         }).ToList();
+
+            return JsonConvert.SerializeObject(books);
         }
     }
 }

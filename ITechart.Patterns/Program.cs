@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using ITechart.Patterns.AbstractFactory;
 using ITechart.Patterns.Adapter;
 using ITechart.Patterns.Facade;
@@ -19,7 +20,7 @@ namespace ITechart.Patterns
             });
 
             RunSample("Adapter", AdapterUsage.UseAdapter);
-
+            
             RunSample("Facade", FacadeUsage.UseFacade);
 
             Console.ReadKey();
