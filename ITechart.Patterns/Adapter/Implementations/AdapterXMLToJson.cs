@@ -38,7 +38,7 @@ namespace ITechart.Patterns.Adapter.Implementations
         private static string Adapt(string stream)
         {
             var xmlDoc = new XmlDocument();
-
+            
             xmlDoc.LoadXml(stream);
             var books = (from XmlNode book in xmlDoc.GetElementsByTagName("Book")
                          select new Book

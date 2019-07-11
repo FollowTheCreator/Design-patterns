@@ -23,6 +23,7 @@ namespace ITechart.Patterns.Proxy.Implementations
         public ExchangeRate GetRate(int id)
         {
             ExchangeRate rate = _rates.FirstOrDefault(item => item.Id == id);
+
             if (rate == null)
             {
                 rate = _yesterdayRate.GetRate(id);
@@ -36,6 +37,7 @@ namespace ITechart.Patterns.Proxy.Implementations
             {
                 rate.Source = "Cache";
             }
+
             return rate;
         }
     }

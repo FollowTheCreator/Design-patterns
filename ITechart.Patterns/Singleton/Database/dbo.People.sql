@@ -1,4 +1,4 @@
-﻿create database [SingletonDB]
+﻿CREATE DATABASE [SingletonDB]
 GO
 use SingletonDB
 GO
@@ -9,6 +9,6 @@ CREATE TABLE [dbo].[People]
     [Age] TINYINT NULL
 )
 GO
-insert into [People] (Name, Age) values ('Alexander', 20), ('Artyom', 20), ('Evgeny', 22), ('Michael', 21)
+INSERT INTO [People] (Name, Age) VALUES ('Alexander', 20), ('Artyom', 20), ('Evgeny', 22), ('Michael', 21)
 GO
-select top 10 * from People
+SELECT TOP 10 * FROM People

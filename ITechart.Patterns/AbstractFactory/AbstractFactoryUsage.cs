@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ITechart.Patterns.AbstractFactory.Implementations;
+using ITechart.Patterns.AbstractFactory.Interfaces;
 
 namespace ITechart.Patterns.AbstractFactory
 {
@@ -11,12 +12,17 @@ namespace ITechart.Patterns.AbstractFactory
     {
         public void UseAbstractFactory()
         {
-            Car myCar = new Car(new EconomicCarFactory());
-            Console.WriteLine($"Economic car description: {myCar.DescribeCar()}");
-            myCar = new Car(new StandartCarFactory());
-            Console.WriteLine($"\nStandart car description: {myCar.DescribeCar()}");
-            myCar = new Car(new ExtraCarFactory());
-            Console.WriteLine($"\nExtra car description: {myCar.DescribeCar()}");
+            CreateAndDescribe("Economic car description:", new EconomicCarFactory());
+
+            CreateAndDescribe("Standart car description:", new EconomicCarFactory());
+
+            CreateAndDescribe("Extra car description:", new EconomicCarFactory());
+        }
+
+        private void CreateAndDescribe(string message, ICarFactory carFactory)
+        {
+            var car = new Car(carFactory);
+            Console.WriteLine($"{message} {car.DescribeCar()}");
         }
     }
 }

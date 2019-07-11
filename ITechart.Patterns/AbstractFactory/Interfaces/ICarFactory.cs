@@ -9,7 +9,9 @@ namespace ITechart.Patterns.AbstractFactory.Interfaces
     interface ICarFactory
     {
         IEngine CreateEngine();
+
         IWheels CreateWheels();
+
         ISuspension CreateSuspension();
     }
 }

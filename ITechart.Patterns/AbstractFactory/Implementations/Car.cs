@@ -15,11 +15,11 @@ namespace ITechart.Patterns.AbstractFactory.Implementations
 
         public ISuspension Suspension { get; set; }
 
-        public Car(ICarFactory CarFactory)
+        public Car(ICarFactory carFactory)
         {
-            Engine = CarFactory.CreateEngine();
-            Wheels = CarFactory.CreateWheels();
-            Suspension = CarFactory.CreateSuspension();
+            Engine = carFactory.CreateEngine();
+            Wheels = carFactory.CreateWheels();
+            Suspension = carFactory.CreateSuspension();
         }
 
         public string DescribeCar()

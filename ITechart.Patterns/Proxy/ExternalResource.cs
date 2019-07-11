@@ -12,7 +12,7 @@ namespace ITechart.Patterns.Proxy
     {
         public static List<ExchangeRate> GetRates()
         {
-            string json = @"
+            const string json = @"
             [
             {
                 'Id': 1,

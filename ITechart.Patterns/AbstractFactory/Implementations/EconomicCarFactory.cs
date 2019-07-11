@@ -13,10 +13,12 @@ namespace ITechart.Patterns.AbstractFactory.Implementations
         {
             return new EconomicEngine();
         }
+
         public IWheels CreateWheels()
         {
             return new EconomicWheels();
         }
+
         public ISuspension CreateSuspension()
         {
             return new EconomicSuspension();

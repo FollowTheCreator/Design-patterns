@@ -13,10 +13,12 @@ namespace ITechart.Patterns.AbstractFactory.Implementations
         {
             return new ExtraEngine();
         }
+
         public IWheels CreateWheels()
         {
             return new ExtraWheels();
         }
+
         public ISuspension CreateSuspension()
         {
             return new ExtraSuspension();
