@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractFactory\AbstractFactoryUsage.cs" />
     <Compile Include="AbstractFactory\Implementations\Car.cs" />
     <Compile Include="AbstractFactory\Implementations\EconomicCarFactory.cs" />
     <Compile Include="AbstractFactory\Implementations\EconomicEngine.cs" />
@@ -66,6 +68,15 @@
     <Compile Include="AbstractFactory\Interfaces\IEngine.cs" />
     <Compile Include="AbstractFactory\Interfaces\ISuspension.cs" />
     <Compile Include="AbstractFactory\Interfaces\IWheels.cs" />
+    <Compile Include="Adapter\AdapterUsage.cs" />
+    <Compile Include="Adapter\BooksAnalyzer.cs" />
+    <Compile Include="Adapter\BooksLibrary.cs" />
+    <Compile Include="Adapter\Implementations\AdapterXmlToJson.cs" />
+    <Compile Include="Adapter\Implementations\Json.cs" />
+    <Compile Include="Adapter\Implementations\Xml.cs" />
+    <Compile Include="Adapter\Interfaces\IJson.cs" />
+    <Compile Include="Adapter\Interfaces\IXml.cs" />
+    <Compile Include="Adapter\Models\Book.cs" />
     <Compile Include="Facade\FacadeUsage.cs" />
     <Compile Include="Facade\Codecs\MPEG4Codec.cs" />
     <Compile Include="Facade\Codecs\OGGCodec.cs" />
