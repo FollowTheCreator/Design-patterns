@@ -11,12 +11,12 @@ namespace ITechart.Patterns.AbstractFactory
     {
         public void UseAbstractFactory()
         {
-            Car MyCar = new Car(new EconomicCarFactory());
-            Console.WriteLine($"Economic car description: {MyCar.DescribeCar()}");
-            MyCar = new Car(new StandartCarFactory());
-            Console.WriteLine($"\nStandart car description: {MyCar.DescribeCar()}");
-            MyCar = new Car(new ExtraCarFactory());
-            Console.WriteLine($"\nExtra car description: {MyCar.DescribeCar()}");
+            Car myCar = new Car(new EconomicCarFactory());
+            Console.WriteLine($"Economic car description: {myCar.DescribeCar()}");
+            myCar = new Car(new StandartCarFactory());
+            Console.WriteLine($"\nStandart car description: {myCar.DescribeCar()}");
+            myCar = new Car(new ExtraCarFactory());
+            Console.WriteLine($"\nExtra car description: {myCar.DescribeCar()}");
         }
     }
 }
